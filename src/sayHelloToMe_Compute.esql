@@ -6,9 +6,9 @@ CREATE COMPUTE MODULE sayHelloToMe_Compute
 		-- CALL CopyMessageHeaders();
 		-- CALL CopyEntireMessage();
 		
-		DECLARE yourName CHARACTER;								-- Declaring a name for the variable to store value from input data
-		SET yourName = InputRoot.JSON.Data.name;				-- giving a value to the variable
-		SET OutputRoot.JSON.Data."->"  = 'Hello ' || yourName; 	-- creating the output message containing a simple text and the variable's value
+		DECLARE yourName CHARACTER; -- Declaring a name for the variable to store value from input data
+		SET yourName = InputRoot.JSON.Data.name; -- giving a value to the variable
+		SET OutputRoot.JSON.Data."->"  = 'Hello ' || yourName; -- creating the output message containing a simple text and the variable's value
 		
 		RETURN TRUE;
 	END;
